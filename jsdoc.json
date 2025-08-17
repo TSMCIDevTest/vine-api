@@ -1,0 +1,18 @@
+{
+  "source": {
+    "include": ["index.js", "README.md"]
+  },
+  "plugins": [],
+  "opts": {
+    "destination": "./docs",
+    "recurse": true,
+    "readme": "README.md",
+    "encoding": "utf8",
+    "template": "templates/default"
+  },
+  "templates": {
+    "systemName": "vine-api",
+    "cleverLinks": true,
+    "monospaceLinks": true
+  }
+}
