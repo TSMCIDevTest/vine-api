@@ -9,3 +9,8 @@ Unofficial Vine API wrapper for Node.js with `vine://` deep-link support.
 ## Install
 ```bash
 npm install vine-api
+
+## Credits
+Credits to GPT
+Credits to the vine app that is long gone
+Credits to the resource https://github.com/bruhdudeisdead/vine-docs
