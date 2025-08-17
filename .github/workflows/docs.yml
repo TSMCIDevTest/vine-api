@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Give Perms to JSDocs
+        run: sudo chmod a+x ./node_modules/.bin/jsdoc
+
       - name: Build docs (JSDoc)
         run: ./node_modules/.bin/jsdoc -c jsdoc.json
 
