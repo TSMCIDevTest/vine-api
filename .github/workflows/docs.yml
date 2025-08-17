@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Build docs (JSDoc)
-        run: npm run docs
+        run: npx jsdoc -c jsdoc.json
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
