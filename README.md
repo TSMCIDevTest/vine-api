@@ -48,6 +48,6 @@ await vine.resolveDeepLink("vine://channels/1?name=Comedy&navRGB=33ccbf&titleRGB
 ```
 
 ## Credits
-Credits to GPT
-Credits to the vine app that is long gone
-Credits to the resource https://github.com/bruhdudeisdead/vine-docs
+# Credits to GPT
+# Credits to the vine app that is long gone
+# Credits to the resource https://github.com/bruhdudeisdead/vine-docs
