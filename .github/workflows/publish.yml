@@ -21,12 +21,13 @@ jobs:
         run: npm install
 
       - name: Run Jest tests with coverage
-        run: npm test
+        run: npx jest --coverage
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          slug: TSMCIDevTest/vine-api
           files: ./coverage/lcov.info
           flags: unittests
           fail_ci_if_error: true
