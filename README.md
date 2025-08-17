@@ -6,6 +6,12 @@
 
 Unofficial Vine App API wrapper for Node.js with `vine://` deep-link support.
 
+> [!NOTE]
+> Credits are below quick start.
+
+> [!IMPORTANT]
+> This project is made with GPT, So you can send pull requests and make sure you credit your work.
+
 ## Install
 ```bash
 npm install vine-api
@@ -47,7 +53,9 @@ await vine.timelines.tag("funny");
 await vine.resolveDeepLink("vine://channels/1?name=Comedy&navRGB=33ccbf&titleRGB=ffffff");
 ```
 
-## Credits
-# Credits to GPT
-# Credits to the vine app that is long gone
-# Credits to the resource https://github.com/bruhdudeisdead/vine-docs
+# Credits
+ Credits to GPT.
+
+ Credits to the vine app that is long gone.
+
+ Credits to the resource https://github.com/bruhdudeisdead/vine-docs.
