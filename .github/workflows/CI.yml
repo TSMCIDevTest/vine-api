@@ -16,31 +16,39 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Checkout repo
       - uses: actions/checkout@v4
 
-      - name: Use Node.js
+      # Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
 
+      # Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Run tests with coverage
       - name: Run Jest tests with coverage
         run: npx jest --coverage
 
+      # Give execution permissions to jsdoc
       - name: Give Perms to JSDocs
         run: sudo chmod a+x ./node_modules/.bin/jsdoc
 
+      # Build docs using local jsdoc
       - name: Build docs (JSDoc)
         run: ./node_modules/.bin/jsdoc -c jsdoc.json
 
+      # Upload GitHub Pages artifact
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-            path: ./docs
+          path: ./docs
 
+      # Upload coverage to Codecov
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
@@ -55,23 +63,27 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Checkout repo
       - uses: actions/checkout@v4
 
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Use Node.js
+      # Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
 
+      # Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Publish to NPM
       - name: Publish to npm
         run: npm publish --access public
         env:
